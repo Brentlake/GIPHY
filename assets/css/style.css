@@ -1,9 +1,52 @@
-body{
-
+body {
+    background-image: url("http://www.whitestripestribute.com/wp-content/uploads/2014/02/black-stripes-crowd.jpg");
 }
-#band-form{
-	
+#band-form {} #band-input {
+    background: red;
+    color: white;
+    float: right;
+    margin: 7px;
+    font-family: 'Orbitron', sans-serif;
+    padding-left: 5px;
 }
-#band-input{
-color:red;
+#band-form {
+    color: red;
+    float: right;
+    margin: 7px;
+}
+button {
+    color: black;
+    float: left;
+    margin: 7px;
+    width: 150px;
+    height: 50px;
+    background: red;
+    -moz-border-radius: 75px / 25px;
+    -webkit-border-radius: 75px / 25px;
+    border-radius: 75px / 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+#add-band {
+    color: red;
+    margin: 7px;
+    font-family: 'Orbitron', sans-serif;
+}
+#gifs {
+    clear: both;
+    margin: 7px;
+}
+img {
+    display: block;
+    margin: 7px;
+}
+p {
+    margin: 7px;
+    width: 150px;
+    font-family: 'Orbitron', sans-serif;
+    color: red;
+}
+#apigif {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }

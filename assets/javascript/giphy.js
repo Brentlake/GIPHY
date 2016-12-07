@@ -24,7 +24,7 @@ $(document).on("click", "button", function(){
                 bandImage.attr("src", results[i].images.fixed_height.url);
                 bandDiv.append(p);
                 bandDiv.append(bandImage);
-                var button = '<button data-band="' + band + '"class="band">' + band + '</button>';
+            
                 $("#gifs").prepend(bandDiv);
 
             }
@@ -34,6 +34,7 @@ $(document).on("click", "button", function(){
 
         //empty array that i am pushing the new searches too
         var bands = [];
+            
 
         function renderButtons() {
 

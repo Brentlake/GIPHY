@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>GIPHY</title>
- <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>GIPHY</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-<form id="band-form">
-<label for="band-input">Bands:</label>
-<input type="text" id="band-input">
+    <form id="band-form">
+        <label for="band-input"></label>
+        <input type="text" id="band-input">
 
-<input id="add-band" type="submit" value="Search">
-      </form>
+        <input id="add-band" type="submit" value="Band Search">
+    </form>
+    <div class="btn">
+        <button class="band" data-band="Asking Alexandria">Asking Alexandria</button>
+        <button class="band" data-band="Crown The Empire">Crown The Empire</button>
+        <button class="band" data-band="Pierce The Veil">Pierce The Veil</button>
+    </div>
+    <div id="buttons-here"></div>
+    <div id="gifs">
+    </div>
+    <div id="apigif">
+        <img src="assets/images/giphy.gif">
+    </div>
 
-<button class="band" data-band="Asking Alexandria">Asking Alexandria</button>
-<button class="band" data-band="Crown The Empire">Crown The Empire</button>
-<button class="band" data-band="Pierce The Veil">Pierce The Veil</button>
-<div id="buttons-here"></div>
-<div id="gifs">
-</div>
 
 
 
-
-
-
-<script src="assets/javascript/giphy.js"></script>
+    <script src="assets/javascript/giphy.js"></script>
 </body>
+
 </html>
