@@ -1,4 +1,3 @@
-//when the button is clicked it will function
 $(document).on("click", "button", function(){ 
     var band = $(this).data("band");
     //URL of the giphy api
@@ -13,7 +12,7 @@ $(document).on("click", "button", function(){
         var results = response.data;
 
 
-
+        //for loop iterating through and adding rating, attributes, and appending new divs
         for (var i = 0; i < results.length; i++) {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                 var rating = results[i].rating;
@@ -22,6 +21,9 @@ $(document).on("click", "button", function(){
                 bandDiv.append(p);
                 var bandImage = $("<img>")
                 bandImage.attr("src", results[i].images.fixed_height.url);
+                bandImage.attr("data-still", results[i].images.fixed_height.url);
+                bandImage.attr("data-animate", results[i].images.fixed_height.url);
+                bandImage.attr("data-state", results[i].images.fixed_height.url);
                 bandDiv.append(p);
                 bandDiv.append(bandImage);
             
@@ -35,7 +37,7 @@ $(document).on("click", "button", function(){
         //empty array that i am pushing the new searches too
         var bands = [];
             
-
+        //iterates through and adds class and data attributes to the new searches and then appends them to a div
         function renderButtons() {
 
             $("#buttons-here").empty()
@@ -43,10 +45,14 @@ $(document).on("click", "button", function(){
                 var a = $("<button>");
                 a.addClass("band");
                 a.attr("data-band", bands[i]);
+                a.attr("data-still", bands[i]);
+                a.attr("data-animate", bands[i]);
+                a.attr("data-state", bands[i]);
                 a.text(bands[i]);
                 $("#buttons-here").append(a);
             }
         }
+        //when the seach is clicked it is rendering the new button
         $("#add-band").on("click", function(e) {
             e.preventDefault();
             var bandTwo = $("#band-input").val().trim();
@@ -57,10 +63,9 @@ $(document).on("click", "button", function(){
      
           
 
-
+        //trying to get the gif to be still and animate once clicked
         });
-
-        $(".band").on("click", function(){
+        $(document).on('click', '#band-input', function(){
         var state = $(this).attr("data-state");
 
       if (state === "still") {
