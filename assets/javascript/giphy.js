@@ -1,5 +1,5 @@
 //when the button is clicked it will function
-$("button").on("click", function() {
+$(document).on("click", "button", function(){ 
     var band = $(this).data("band");
     //URL of the giphy api
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
@@ -24,7 +24,7 @@ $("button").on("click", function() {
                 bandImage.attr("src", results[i].images.fixed_height.url);
                 bandDiv.append(p);
                 bandDiv.append(bandImage);
-                var button = '<button data-band="' + band + '"class="bands">' + band + '</button>';
+                var button = '<button data-band="' + band + '"class="band">' + band + '</button>';
                 $("#gifs").prepend(bandDiv);
 
             }
@@ -49,6 +49,7 @@ $("button").on("click", function() {
         $("#add-band").on("click", function(e) {
             e.preventDefault();
             var bandTwo = $("#band-input").val().trim();
+
             bands.push(bandTwo);
             renderButtons();
             console.log(bands);
@@ -58,8 +59,19 @@ $("button").on("click", function() {
 
         });
 
+        $(".band").on("click", function(){
+        var state = $(this).attr("data-state");
 
+      if (state === "still") {
+        $(this).attr("src", $(this).data("animate"));
+        $(this).attr("data-state", "animate");
+      }
+      else {
+        
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+        }
 
-  
+  });
     });
 });
