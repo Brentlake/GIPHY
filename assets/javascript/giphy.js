@@ -1,9 +1,10 @@
+//when the button is clicked it will function
 $("button").on("click", function() {
     var band = $(this).data("band");
-
+    //URL of the giphy api
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
         band + "&api_key=dc6zaTOxFJmzC&limit=10";
-
+        //call to api for information
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -25,12 +26,13 @@ $("button").on("click", function() {
                 bandDiv.append(bandImage);
                 var button = '<button data-band="' + band + '"class="bands">' + band + '</button>';
                 $("#gifs").prepend(bandDiv);
+
             }
 
         }
 
 
-
+        //empty array that i am pushing the new searches too
         var bands = [];
 
         function renderButtons() {
@@ -38,7 +40,7 @@ $("button").on("click", function() {
             $("#buttons-here").empty()
             for (var i = 0; i < bands.length; i++) {
                 var a = $("<button>");
-                a.addClass("");
+                a.addClass("band");
                 a.attr("data-band", bands[i]);
                 a.text(bands[i]);
                 $("#buttons-here").append(a);
@@ -50,16 +52,14 @@ $("button").on("click", function() {
             bands.push(bandTwo);
             renderButtons();
             console.log(bands);
-            console.log(bandTwo)
-            $(".band").on("click", function() {
-                $("#gifs").prepend(bandDiv);
-            });
+     
+          
 
 
         });
 
 
 
-        renderButtons();
+  
     });
 });
