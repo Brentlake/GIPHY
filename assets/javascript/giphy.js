@@ -19,9 +19,9 @@ $(document).on("click", "button", function(){
                 var bandDiv = $("<div>");
                 var p = $("<p>").text("Rating: " + results[i].rating);
                 bandDiv.append(p);
-                var bandImage = $("<img>")
-                bandImage.attr("src", results[i].images.fixed_height.url);
-                bandImage.attr("data-still", results[i].images.fixed_height.url);
+                var bandImage = $("<img class='giff'>");
+                bandImage.attr("src", results[i].images.fixed_height_still.url);
+                bandImage.attr("data-still", results[i].images.fixed_height_still.url);
                 bandImage.attr("data-animate", results[i].images.fixed_height.url);
                 bandImage.attr("data-state", results[i].images.fixed_height.url);
                 bandDiv.append(p);
@@ -65,7 +65,7 @@ $(document).on("click", "button", function(){
 
         //trying to get the gif to be still and animate once clicked
         });
-        $(document).on('click', '#band-input', function(){
+        $(document).on('click', '.giff', function(){
         var state = $(this).attr("data-state");
 
       if (state === "still") {
