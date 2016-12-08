@@ -1,7 +1,7 @@
 $(document).on("click", "button", function(){ 
     var band = $(this).data("band");
     //URL of the giphy api
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         band + "&api_key=dc6zaTOxFJmzC&limit=10";
         //call to api for information
     $.ajax({
